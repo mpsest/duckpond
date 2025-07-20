@@ -437,19 +437,40 @@ input {
 #b2-birdMiddle,
 #b2-birdTop,
 #d1-birdPier,
-#d1-bird {
+#d1-bird > g > g:first-child {
   animation: birds-moving 5s ease-in-out infinite;
-  animation-direction: alternate;
   transform-box: fill-box;
   transform-origin: 20% 100%;
 }
 
+#b2-birdDown {
+  animation-delay: 0s;
+}
+#b2-birdMiddle {
+  animation-delay: 1.2s;
+}
+#b2-birdTop {
+  animation-delay: 2.8s;
+}
+#d1-birdPier {
+  animation-delay: 0.7s;
+}
+#d1-bird > g > g:first-child {
+  animation-delay: 3.5s;
+}
+
 @keyframes birds-moving {
   0% {
-    transform: translate(-5px);
+    transform: translateY(0) rotateZ(0deg);
+  }
+  8% {
+    transform: translateY(-15px) rotateZ(-3deg);
+  }
+  20% {
+    transform: translateY(0) rotateZ(0deg);
   }
   100% {
-    transform: translate(0);
+    transform: translateY(0) rotateZ(0deg);
   }
 }
 /* Ver melhor forma de animar birds */
