@@ -101,22 +101,6 @@ footer {
 .dropShadow {
   filter: drop-shadow(0px 5px 2px rgba(0, 0, 0, 0.2));
 }
-.modal {
-  /* width: 50%; */
-  /* height: 50%; */
-  width: 954px;
-  height: 576px;
-  color: black;
-  border-radius: 10px;
-  filter: drop-shadow(0px 5px 2px rgba(0, 0, 0, 0.2));
-  overflow: auto;
-  font-size: 1rem;
-  padding: 25px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
 
 .align-center {
   text-align: center;
@@ -129,25 +113,13 @@ button {
   filter: drop-shadow(0px 5px 2px rgba(0, 0, 0, 0.2));
   border: none;
 }
-.send-button {
-  border-radius: 27px;
-  width: 185px;
-  height: 35px;
-  filter: drop-shadow(0px 5px 2px rgba(0, 0, 0, 0.2));
-  border: none;
-}
+
 input {
   border-radius: 5px;
   filter: drop-shadow(0px 5px 2px rgba(0, 0, 0, 0.2));
   border: none;
 }
 
-.icon-contacts {
-  fill: #c0dbe2;
-  width: 40px;
-  height: 40px;
-  filter: drop-shadow(0px 5px 2px rgba(0, 0, 0, 0.2));
-}
 /* Form styles */
 .row {
   display: flex;
