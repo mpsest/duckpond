@@ -1,0 +1,439 @@
+/* General styles */
+html,
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+body {
+  width: 100vw;
+  height: 100vh;
+}
+
+header {
+  position: fixed;
+  top: 0;
+  z-index: 1;
+  width: 100%;
+  display: flex;
+  background-color: rgba(240, 240, 240, 0.09);
+  height: 60px;
+  backdrop-filter: blur(2px);
+  justify-content: space-between;
+  align-items: center;
+}
+.header-menu {
+  display: flex;
+  align-items: center;
+}
+.logo {
+  width: 80px;
+  height: 80px;
+}
+.mode-btn {
+  width: 30px;
+}
+.lang-btn {
+  width: 40px;
+}
+footer {
+  position: fixed;
+  bottom: 0;
+  z-index: 2;
+  width: 100%;
+  display: flex;
+  background-color: rgba(240, 240, 240, 0.09);
+  height: 50px;
+  backdrop-filter: blur(2px);
+  justify-content: space-between;
+  align-items: center;
+}
+.centering {
+  align-content: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.btn-menu {
+  background: none;
+  border: none;
+  filter: drop-shadow(0px 5px 2px rgba(0, 0, 0, 0.5));
+}
+.btn-menu svg {
+  width: 80px;
+}
+
+.modal {
+  width: 50%;
+  height: 50%;
+  color: black;
+  background-color: #9fcc89;
+  filter: drop-shadow(0px 5px 2px rgba(0, 0, 0, 0.2));
+  overflow: auto;
+  font-size: 1rem;
+  margin: 0;
+  padding: 0;
+}
+
+.icon-about {
+  width: 30px;
+  fill: #aada93;
+  filter: drop-shadow(0px 5px 2px rgba(0, 0, 0, 0.2));
+  margin: 0;
+  padding: 0;
+}
+button {
+  border-radius: 27px;
+  width: 150px;
+  height: 50px;
+  background-color: #aada93;
+  filter: drop-shadow(0px 5px 2px rgba(0, 0, 0, 0.2));
+}
+/* Sections styles */
+.sections-container {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+  grid-template-columns: 1fr 1fr;
+  place-items: center;
+  scroll-snap-type: both mandatory;
+  /* SCROLL DEACTIVATED WHILE DEVELOPING */
+  overflow: auto;
+}
+
+.background-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 200vw;
+  height: 200vh;
+  z-index: 0;
+  overflow: hidden;
+  /* transform: scale(0.5);
+  transform-origin: left top;
+  animation: background-zoom 2s ease-out forwards;
+  animation-delay: 1s; */
+}
+
+.background-container svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.section {
+  pointer-events: none;
+  width: 100vw;
+  height: 100vh;
+  scroll-snap-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  color: #fff;
+  z-index: 1;
+}
+
+.section.a {
+  grid-row: 1 / 2;
+  grid-column: 1 / 2;
+}
+.section.b {
+  grid-row: 1 / 2;
+  grid-column: 2 / 2;
+}
+.section.c {
+  grid-row: 2 / 2;
+  grid-column: 1 / 2;
+}
+.section.d {
+  grid-row: 2 / 2;
+  grid-column: 2/ 2;
+}
+
+/* NIGHT Illustration IDs */
+#nightDucks,
+#nightLake,
+#nightMontainsSky,
+#nightLandRight,
+#nightLandLeft,
+#nightLandBottom,
+#nightLandTop,
+#nightPier,
+#nightTreeAnimals {
+  display: none;
+}
+/* NIGHT: hide
+#b1-deer,
+#b2-doe, 
+#b2-birdDown,
+#b2-birdMiddle,
+#b2-birdTop,
+#c2-squirrel,
+#d1-birdPier,
+#d1-bird */
+
+/*DAYLIGHT Illustration IDs*/
+/* #a1-whiteDuck,
+#a1-fish,
+#a2-whiteDuck,
+#a2-femMalDuck,
+#a2-fish,
+#b1-malDuck,
+#b2-fish
+#c1-koiLeft,
+#c1-koiMiddle,
+#c1-koiRight,
+#c1-ducklings,
+#c2-duckling,
+#c2-boat,
+#c2-whiteDuck,
+#c2-fish,
+#d1-malDuck,
+#d2-femMalDuck,
+#d2-fish */
+
+/* Animations' styles */
+/* ANIMATION DEACTIVATED WHILE DEVELOPING */
+/* @keyframes background-zoom {
+  0% {
+    transform: scale(0.5);
+  }
+  100% {
+    transform: scale(1);
+  }
+} */
+#a1-fish {
+  filter: drop-shadow(0px 5px 2px rgba(0, 0, 0, 0.4));
+  transform-origin: 50% 80%;
+  animation: fish-swim 7s ease-in-out infinite;
+}
+
+@keyframes fish-swim {
+  0% {
+    transform: translateX(100px);
+  }
+  80% {
+    transform: translateX(30px);
+  }
+  85% {
+    filter: opacity(0.5);
+  }
+  100% {
+    filter: opacity(0);
+  }
+}
+
+#birds1,
+.cls-35 {
+  /* Birds in sky */
+  animation: birds-flying 4s ease-in-out infinite;
+  animation-direction: alternate;
+}
+@keyframes birds-flying {
+  0% {
+    transform: translateY(10px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+#birds2,
+#birds4 {
+  transform-origin: 50% 80%;
+  animation: birds-flying 2.4s ease-in-out infinite;
+  animation-direction: alternate;
+}
+@keyframes birds-flying {
+  0% {
+    transform: translateY(-30px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+/* ARRANJAR ANIMAÇÂO BIRDS */
+
+#buttonLP {
+  filter: drop-shadow(0px 5px 2px rgba(0, 0, 0, 0.4));
+}
+.cls-132 {
+  /* ripples animation */
+  animation: ripples 2s ease-in-out infinite;
+  animation-direction: alternate;
+}
+@keyframes ripples {
+  0% {
+    transform: translateX(7px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+#sun,
+#sun-topRays,
+#sun-bottomRays {
+  animation: sun-rotate 10s linear infinite;
+  transform-origin: 50% 50%;
+  transform-box: fill-box;
+}
+@keyframes sun-rotate {
+  0% {
+    transform: rotateZ(0deg) scale(1);
+  }
+  25% {
+    transform: rotateZ(90deg) scale(1.2);
+  }
+  50% {
+    transform: rotateZ(180deg) scale(1);
+  }
+  75% {
+    transform: rotateZ(270deg) scale(1.2);
+  }
+  100% {
+    transform: rotateZ(360deg) scale(1);
+  }
+}
+
+#deer-head {
+  animation: deer-moving 4s ease-in-out infinite;
+  animation-direction: alternate;
+  transform-box: fill-box;
+  transform-origin: 50% 80%;
+}
+@keyframes deer-moving {
+  0% {
+    transform: rotateZ(0deg) translateY(3px);
+  }
+
+  100% {
+    transform: rotateZ(29deg) translateY(0px);
+  }
+}
+#doe-head {
+  animation: doe-moving 7s ease-in-out infinite;
+  animation-direction: alternate;
+  transform-box: fill-box;
+  transform-origin: 50% 80%;
+}
+@keyframes doe-moving {
+  0% {
+    transform: rotateZ(0deg) translateY(-3px);
+  }
+
+  100% {
+    transform: rotateZ(35deg) translateY(-2px);
+  }
+}
+#doe-tail,
+#deer-tail {
+  animation: tails-moving 2s ease-in-out infinite;
+  animation-direction: alternate;
+  transform-box: fill-box;
+  transform-origin: 0 0;
+}
+@keyframes tails-moving {
+  0% {
+    transform: rotate(-5deg);
+  }
+
+  100% {
+    transform: rotate(-15deg);
+  }
+}
+
+#squirrel-tail,
+#squirrel-arm {
+  animation: squirrel-moving 5s ease-in-out infinite;
+  animation-direction: alternate;
+  transform-box: fill-box;
+  transform-origin: 20% 100%;
+}
+@keyframes squirrel-moving {
+  0% {
+    transform: rotate(20deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+#b2-birdDown,
+#b2-birdMiddle,
+#b2-birdTop,
+#d1-birdPier,
+#d1-bird {
+  animation: birds-moving 5s ease-in-out infinite;
+  animation-direction: alternate;
+  transform-box: fill-box;
+  transform-origin: 20% 100%;
+}
+
+@keyframes birds-moving {
+  0% {
+    transform: translate(-5px);
+  }
+  100% {
+    transform: translate(0);
+  }
+}
+/* Ver melhor forma de animar birds */
+.cls-11,
+#a1-whiteDuck,
+#a2-whiteDuck,
+#a2-femMalDuck,
+#b1-malDuck,
+#c1-ducklings,
+#c2-duckling,
+#c2-whiteDuck,
+#d1-malDuck,
+#d2-femMalDuck,
+#c2-boat {
+  filter: drop-shadow(0px 5px 2px rgba(0, 0, 0, 0.2));
+  animation: duck-moving 5s ease-in-out infinite;
+  animation-direction: alternate;
+}
+@keyframes duck-moving {
+  0% {
+    transform: translateY(15px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+.cls-101,
+.cls-171 {
+  /* Animation clouds */
+  animation: clouds-moving 10s ease-in-out infinite;
+  animation-direction: alternate;
+}
+@keyframes clouds-moving {
+  0% {
+    transform: translateY(5px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+#c1-koiLeft,
+#c1-koiMiddle,
+#c1-koiRight {
+  animation: koi-moving 10s infinite;
+  transform-box: fill-box;
+  transform-origin: 0% 0%;
+}
+
+@keyframes koi-moving {
+  0% {
+    transform: rotate(360deg);
+  }
+  100% {
+    transform: rotate(0);
+  }
+}
