@@ -57,6 +57,9 @@ header {
 .lang-btn {
   width: 40px;
 }
+.lang-btn:hover {
+  fill: red;
+}
 footer {
   position: fixed;
   bottom: 0;
@@ -78,6 +81,7 @@ footer {
 }
 small {
   padding-left: 10px;
+  font-size: smaller;
 }
 .btn-menu {
   cursor: pointer;
