@@ -1,3 +1,20 @@
+.lightModeTop {
+  background-color: #f4f3f0;
+  /* box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25); */
+}
+.lightModeBg {
+  background-color: rgba(240, 240, 240, 0.85);
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  /* backdrop-filter: blur(2px); POR NO MODAL */
+}
+.darkModeTop {
+  background-color: #455e64;
+}
+.darkModeBg {
+  background-color: rgba(48, 66, 70, 0.9);
+  box-shadow: inset 0 2px 8px rgba(0, 0, 0, 0.25);
+}
+
 .modal {
   /* width: 50%; */
   /* height: 50%; */
@@ -11,14 +28,17 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
   border-radius: 10px;
-  /* background: rgba(240, 240, 240, 0.85); */
-  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(2px);
 }
 
 .modal-about button {
-  background: #F4F3F0;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  border-radius: 27px;
+  width: 185px;
+  height: 35px;
+  border: none;
 }
 
 .text-about {
@@ -27,7 +47,7 @@
 }
 
 .icon-about {
-  fill: #F4F3F0;
+  fill: #f4f3f0;
   width: 40px;
   height: 40px;
   filter: drop-shadow(0px 5px 2px rgba(0, 0, 0, 0.2));
@@ -54,21 +74,36 @@
   width: 100%;
   height: 30px;
   border-radius: 5px;
-/* background: #F4F3F0; */
-box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25) inset;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25) inset;
+  border: none;
 }
-
-.modal-contacts .send-button {
+.modal-contacts textarea {
+  width: 466px;
+  height: 120px;
+  border-radius: 5px;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25) inset;
+  border: none;
+}
+.modal-contacts .modal-btn {
   border-radius: 27px;
   width: 185px;
   line-height: 35px;
-  filter: drop-shadow(0px 5px 2px rgba(0, 0, 0, 0.2));
   border: none;
 }
 
 .modal-contacts .icon-contacts {
-  fill: #c0dbe2;
+  fill: #f4f3f0;
   width: 40px;
   height: 40px;
+  filter: drop-shadow(0px 5px 2px rgba(0, 0, 0, 0.2));
+}
+.close {
+  width: 25px;
+  height: 25px;
+  border-radius: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-self: flex-end;
   filter: drop-shadow(0px 5px 2px rgba(0, 0, 0, 0.2));
 }
