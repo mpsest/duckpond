@@ -10,10 +10,25 @@
 //   }
 // });
 
-function addButtonClicks() {
-  const contactsButton = document.getElementById("c1-button");
-  contactsButton.addEventListener("click", function () {
+function portfolioModal() {
+  const portfButton = document.getElementById("c1-button");
+  portfButton.addEventListener("click", function () {
     const modal = document.getElementById("modal-portfolio");
+    modal.classList.add("modal-visible");
+  });
+}
+function aboutModal() {
+  const aboutButton = document.getElementById("b1-button");
+  aboutButton.addEventListener("click", function () {
+    const modal = document.getElementById("modal-about");
+    modal.classList.add("modal-visible");
+  });
+}
+
+function contactsModal() {
+  const contactsButton = document.getElementById("d2-button");
+  contactsButton.addEventListener("click", function () {
+    const modal = document.getElementById("modal-contacts");
     modal.classList.add("modal-visible");
   });
 }
@@ -25,7 +40,9 @@ async function loadDuckpondSvg() {
   container.innerHTML = svg;
   document.body.classList.remove("loading");
 
-  addButtonClicks();
+  portfolioModal();
+  aboutModal();
+  contactsModal();
 }
 
 loadDuckpondSvg();

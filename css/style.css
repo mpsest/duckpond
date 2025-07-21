@@ -46,8 +46,13 @@ header {
   height: 80px;
   padding-top: 7px;
 }
-.mode-btn {
+.lightMode-btn,
+.darkMode-btn {
   width: 30px;
+  cursor: pointer;
+}
+.lightMode-btn:hover {
+  fill: red;
 }
 .lang-btn {
   width: 40px;
@@ -88,6 +93,13 @@ small {
   align-self: center;
 }
 
+#a1-button:hover,
+#b1-button:hover,
+#c1-button:hover,
+#d2-button:hover {
+  filter: brightness(110%);
+  cursor: pointer;
+}
 .lightModeTop {
   background-color: #f4f3f0;
 }
@@ -110,7 +122,6 @@ small {
 .align-center {
   text-align: center;
 }
-
 
 /* Form styles */
 .row {
