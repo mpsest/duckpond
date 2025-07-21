@@ -59,19 +59,18 @@ header {
 }
 footer {
   position: fixed;
-  bottom: 0;
+  bottom: 11px;
   z-index: 2;
   width: 100%;
-  display: flex;
   background-color: rgba(240, 240, 240, 0.09);
   height: 50px;
   backdrop-filter: blur(2px);
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
   align-items: center;
   pointer-events: none;
 }
 .centering {
-  align-content: center;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -162,7 +161,8 @@ small {
   place-items: center;
   scroll-snap-type: both mandatory;
   /* SCROLL DEACTIVATED WHILE DEVELOPING */
-  overflow: auto;
+  overflow: overlay;
+  scrollbar-width: thin;
 }
 
 .background-container {
