@@ -11,14 +11,15 @@
 // });
 
 function addButtonClicks() {
-  const button = document.getElementById("buttonLP");
-  button.addEventListener("click", function () {
-    alert("OLA");
-});
+  const contactsButton = document.getElementById("c1-button");
+  contactsButton.addEventListener("click", function () {
+    const modal = document.getElementById("modal-portfolio");
+    modal.classList.add("modal-visible");
+  });
 }
 
 async function loadDuckpondSvg() {
-  const response = await fetch("./images/duckpond.svg")
+  const response = await fetch("./images/duckpond.svg");
   const svg = await response.text();
   const container = document.getElementById("duckpond-container");
   container.innerHTML = svg;
@@ -29,3 +30,10 @@ async function loadDuckpondSvg() {
 
 loadDuckpondSvg();
 
+const closeModalButtons = document.querySelectorAll(".modal .close");
+for (const button of closeModalButtons) {
+  button.addEventListener("click", function () {
+    const modal = button.parentElement;
+    modal.classList.remove("modal-visible");
+  });
+}
