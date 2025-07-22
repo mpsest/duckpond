@@ -56,6 +56,7 @@ header {
 }
 .lang-btn {
   width: 40px;
+  cursor: pointer;
 }
 .lang-btn:hover {
   fill: red;
@@ -78,10 +79,13 @@ footer {
   justify-content: center;
   align-items: center;
 }
+
+/* .centering - não apaguei esta classe? */
 small {
   padding-left: 10px;
   font-size: smaller;
 }
+
 .btn-menu {
   cursor: pointer;
   pointer-events: auto;
@@ -90,10 +94,23 @@ small {
   filter: drop-shadow(0px 5px 2px rgba(0, 0, 0, 0.5));
   display: flex;
 }
+
 .btn-menu svg {
   width: 83px;
   height: 45px;
   align-self: center;
+}
+
+#a1-button,
+#b1-button {
+  animation: button-translate 1s forwards;
+  animation-iteration-count: 1;
+}
+
+@keyframes button-translate {
+  100% {
+    transform: translateY(-25px);
+  }
 }
 
 #a1-button:hover,
