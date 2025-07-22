@@ -63,7 +63,7 @@ header {
 }
 footer {
   position: fixed;
-  bottom: 11px;
+  bottom: 0;
   z-index: 2;
   width: 100%;
   background-color: rgba(240, 240, 240, 0.09);
@@ -180,10 +180,21 @@ small {
   grid-template-rows: 1fr 1fr;
   grid-template-columns: 1fr 1fr;
   place-items: center;
-  scroll-snap-type: both mandatory;
+  /* scroll-snap-type: both mandatory; */
   /* SCROLL DEACTIVATED WHILE DEVELOPING */
   overflow: overlay;
   scrollbar-width: thin;
+  cursor: grab;
+  scrollbar-width: none;
+}
+
+.sections-container::-webkit-scrollbar {
+  display: none;
+}
+
+.sections-container.drag {
+  /* scroll-snap-type: none; */
+  cursor: grabbing;
 }
 
 .background-container {
