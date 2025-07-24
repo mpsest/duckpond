@@ -17,7 +17,7 @@
 
 .modal {
   width: 50%;
-  height: 50%;
+  height: 70%;
   max-width: 954px;
   max-height: 576px;
   color: black;
@@ -39,6 +39,10 @@
 .modal.modal-visible {
   display: flex;
   opacity: 1;
+}
+
+.modal h2 {
+  margin-top: 0px;
 }
 
 .modal button {
@@ -120,4 +124,121 @@
 .close:hover {
   background-color: #c4d1a7;
   cursor: pointer;
+}
+
+.modal.modal-portfolio {
+  display: block;
+}
+
+.portfolio-container {
+  position: relative;
+  overflow: visible;
+  width: 100%;
+  max-width: 300px;
+}
+
+.portfolio-container .portfolio-border {
+  position: absolute;
+  top: 0px;
+  left: 0;
+  right: 0;
+  height: 278px;
+  border: 1px solid black;
+  border-radius: 8px;
+  pointer-events: none;
+}
+
+ul.portfolio-slider {
+  width: 100%;
+  padding: 0px;
+  margin: 0 0;
+  display: flex;
+  gap: 4vw;
+  overflow-x: scroll;
+  scroll-snap-type: x mandatory;
+  anchor-name: --portfolioSlider;
+  scroll-marker-group: after;
+  scrollbar-width: none;
+  flex-shrink: 0;
+}
+
+ul.portfolio-slider::-webkit-scrollbar {
+  display: none;
+}
+
+ul.portfolio-slider li {
+  list-style-type: none;
+  padding: 0px;
+  min-width: 100%;
+  scroll-snap-align: center;
+}
+
+ul.portfolio-slider li img {
+  display: block;
+  background-color: #455e64;
+  width: calc(100% - 50px);
+  min-height: 280px;
+  margin: 0px auto;
+}
+
+ul.portfolio-slider::scroll-button(*) {
+  background: none;
+  border: 0;
+  font-size: 2rem;
+  color: rgb(0 0 0 / 0.7);
+  cursor: pointer;
+  position: absolute;
+  position-anchor: --portfolioSlider;
+  width: 30px;
+  height: 30px;
+  padding: 0px;
+}
+
+ul.portfolio-slider::scroll-button(*):hover,
+ul.portfolio-slider::scroll-button(*):focus {
+  color: rgb(0 0 0 / 1);
+}
+
+ul.portfolio-slider::scroll-button(*):active {
+  translate: 1px 1px;
+}
+
+ul.portfolio-slider::scroll-button(*):disabled {
+  opacity: 0.2;
+  cursor: unset;
+}
+
+ul.portfolio-slider::scroll-button(left) {
+  content: url("../images/chevron-left.svg");
+  right: calc(anchor(left) - 30px);
+  bottom: calc(anchor(center) + 15px);
+}
+
+ul.portfolio-slider::scroll-button(right) {
+  content: url("../images/chevron-right.svg");
+  left: calc(anchor(right) - 30px);
+  bottom: calc(anchor(center) + 15px);
+}
+
+ul.portfolio-slider::scroll-marker-group {
+  position: absolute;
+  position-anchor: --portfolioSlider;
+  top: calc(anchor(top) + 250px);
+  justify-self: anchor-center;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+ul.portfolio-slider li::scroll-marker {
+  content: "";
+  width: 8px;
+  height: 8px;
+  background-color: transparent;
+  border: 2px solid black;
+  border-radius: 50%;
+}
+
+ul.portfolio-slider li::scroll-marker:target-current {
+  background-color: black;
 }
