@@ -180,10 +180,7 @@ small {
   grid-template-rows: 1fr 1fr;
   grid-template-columns: 1fr 1fr;
   place-items: center;
-  /* scroll-snap-type: both mandatory; */
-  /* SCROLL DEACTIVATED WHILE DEVELOPING */
   overflow: overlay;
-  scrollbar-width: thin;
   cursor: grab;
   scrollbar-width: none;
 }
@@ -300,12 +297,12 @@ small {
   }
 } */
 #a1-fish {
+  animation: fishLeft-swim 7s ease-in-out infinite;
   filter: drop-shadow(0px 5px 2px rgba(0, 0, 0, 0.4));
   transform-origin: 50% 80%;
-  animation: fish-swim 7s ease-in-out infinite;
 }
 
-@keyframes fish-swim {
+@keyframes fishLeft-swim {
   0% {
     transform: translateX(100px);
   }
@@ -319,8 +316,52 @@ small {
     filter: opacity(0);
   }
 }
+#a2-fish,
+#c2-fish {
+  animation: fish-a-c-swim 7s ease-in-out infinite;
+  filter: drop-shadow(0px 5px 2px rgba(0, 0, 0, 0.4));
+  transform-origin: 50% 80%;
+  animation-direction: forwards;
+}
 
-#birds1,
+@keyframes fish-a-c-swim {
+  0% {
+    transform: translateX(-75);
+  }
+  80% {
+    transform: translateX(30px);
+  }
+  85% {
+    filter: opacity(0.5);
+  }
+  100% {
+    filter: opacity(0);
+  }
+}
+
+#b2-fish,
+#d2-fish {
+  animation: fish-b-d-swim 7s ease-in-out infinite;
+  filter: drop-shadow(0px 5px 2px rgba(0, 0, 0, 0.4));
+  transform-origin: 50% 80%;
+  animation-direction: forwards;
+}
+
+@keyframes fish-b-d-swim {
+  0% {
+    transform: translateX(-100px);
+  }
+  80% {
+    transform: translateX(30px);
+  }
+  85% {
+    filter: opacity(0.5);
+  }
+  100% {
+    filter: opacity(0);
+  }
+}
+
 .cls-35 {
   /* Birds in sky */
   animation: birds-flying 4s ease-in-out infinite;
@@ -439,13 +480,19 @@ small {
   }
 }
 
-#squirrel-tail,
-#squirrel-arm {
+#squirrel-tail {
   animation: squirrel-moving 5s ease-in-out infinite;
   animation-direction: alternate;
   transform-box: fill-box;
   transform-origin: 20% 100%;
 }
+#squirrel-arm {
+  animation: squirrel-moving 2s ease-in-out infinite;
+  animation-direction: alternate;
+  transform-box: fill-box;
+  transform-origin: 100% 100%;
+}
+
 @keyframes squirrel-moving {
   0% {
     transform: rotate(20deg);
@@ -454,6 +501,24 @@ small {
     transform: rotate(0deg);
   }
 }
+.cls-127,
+.cls-175,
+.cls-105 {
+  /* animation: acorn-moving 5s ease-in-out infinite;
+  animation-direction: alternate;
+  transform-box: fill-box;
+  transform-origin: 50% 50%; */
+  display: none;
+}
+
+/* @keyframes acorn-moving {
+  0% {
+    transform: translateX(100deg);
+  }
+  100% {
+    transform: translateX(0deg);
+  }
+} */
 
 #b2-birdDown,
 #b2-birdMiddle,
@@ -523,26 +588,54 @@ small {
 .cls-101,
 .cls-171 {
   /* Animation clouds */
-  animation: clouds-moving 10s ease-in-out infinite;
+  animation: clouds-moving 5s ease-in-out infinite;
   animation-direction: alternate;
 }
 @keyframes clouds-moving {
   0% {
-    transform: translateY(5px);
+    transform: translateY(20px);
   }
   100% {
     transform: translateY(0);
   }
 }
-#c1-koiLeft,
-#c1-koiMiddle,
+#c1-koiLeft {
+  animation: koiLeft-moving 7s infinite;
+  transform-box: fill-box;
+  transform-origin: 100% 0%;
+}
+
+@keyframes koiLeft-moving {
+  0% {
+    transform: rotate(360deg);
+  }
+  100% {
+    transform: rotate(0);
+  }
+}
+#c1-koiMiddle {
+  animation: koiMiddle-moving 5s infinite;
+  transform-box: fill-box;
+  animation-direction: alternate;
+  transform-origin: 0% 100%;
+}
+
+@keyframes koiMiddle-moving {
+  0% {
+    transform: translateY(50px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
 #c1-koiRight {
-  animation: koi-moving 10s infinite;
+  animation: koiRight-moving 10s infinite;
   transform-box: fill-box;
   transform-origin: 0% 0%;
 }
 
-@keyframes koi-moving {
+@keyframes koiRight-moving {
   0% {
     transform: rotate(360deg);
   }
