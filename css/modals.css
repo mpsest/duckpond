@@ -48,7 +48,6 @@ body.dark .lightModeTop {
 }
 
 .modal.modal-visible {
-  display: flex;
   opacity: 1;
   visibility: visible;
   pointer-events: auto;
@@ -151,10 +150,6 @@ body.dark .iconSM {
 body.dark .close {
   background-color: #455e64;
   color: white;
-}
-
-.modal.modal-portfolio {
-  display: block;
 }
 
 .portfolio-container {
