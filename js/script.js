@@ -79,7 +79,7 @@ slider.addEventListener("mousedown", (e) => {
   slider.addEventListener(event, () => {
     isDown = false;
     slider.classList.remove("drag");
-  }),
+  })
 );
 
 // Mouse move event
@@ -92,4 +92,12 @@ slider.addEventListener("mousemove", (e) => {
   const walkY = (y - startY) * scrollSpeed;
   slider.scrollLeft = scrollLeft - walkX;
   slider.scrollTop = scrollTop - walkY;
+});
+
+const btnDark = document.getElementById("darkMode");
+btnDark.addEventListener("click", function () {
+  document.body.classList.add("dark");
+  const shiftColors = document.querySelectorAll(".lightModeBg");
+  // shiftColors.classList.remove("lightModeBg");
+  // shiftColors.classList.add("darkModeBg");
 });

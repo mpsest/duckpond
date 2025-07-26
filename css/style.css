@@ -37,6 +37,10 @@ header {
   justify-content: space-between;
   align-items: center;
 }
+body.dark header,
+body.dark footer {
+  background-color: rgba(48, 66, 70, 0.09);
+}
 .header-menu {
   display: flex;
   align-items: center;
@@ -103,23 +107,37 @@ small {
 
 #a1-button,
 #b1-button {
-  animation: button-translate 1s forwards;
-  animation-iteration-count: 1;
-}
-
-@keyframes button-translate {
-  100% {
-    transform: translateY(-25px);
-  }
+  transform: translateY(-25px);
+  transform-origin: center center;
+  transform-box: fill-box;
 }
 
 #a1-button:hover,
-#b1-button:hover,
+#b1-button:hover {
+  transform: translateY(-25px) scale(1);
+}
 #c1-button:hover,
 #d2-button:hover {
-  filter: brightness(110%);
+  filter: brightness(120%);
   cursor: pointer;
+  filter: drop-shadow(0px 5px 2px rgba(0, 0, 0, 0.4));
+  /* animation: button-hover 2s ease-in-out;
+  animation-iteration-count: 1;
+  transform-box: fill-box; */
+  transform: scale(1);
+  transform-origin: center center;
+  transform-box: fill-box;
 }
+
+/* @keyframes button-hover {
+  0% {
+    transform: translateY(50px) scale(1.5);
+  }
+  100% {
+    transform: translateY(0px) scale(0);
+  }
+} */
+
 .lightModeTop {
   background-color: #f4f3f0;
 }
@@ -256,16 +274,51 @@ small {
 #nightTreeAnimals {
   display: none;
 }
-/* NIGHT: hide
-#b1-deer,
-#b2-doe, 
-#b2-birdDown,
-#b2-birdMiddle,
-#b2-birdTop,
-#c2-squirrel,
-#d1-birdPier,
-#d1-bird */
 
+body.dark #nightDucks,
+body.dark #nightLake,
+body.dark #nightMontainsSky,
+body.dark #nightLandRight,
+body.dark #nightLandLeft,
+body.dark #nightLandBottom,
+body.dark #nightLandTop,
+body.dark #nightPier,
+body.dark #nightTreeAnimals {
+  display: block;
+}
+
+body.dark #b1-deer,
+body.dark #b2-doe,
+body.dark #b2-birdDown,
+body.dark #b2-birdMiddle,
+body.dark #b2-birdTop,
+body.dark #c2-squirrel,
+body.dark #d1-birdPier,
+body.dark #d1-bird,
+body.dark #a1-whiteDuck,
+body.dark #a2-whiteDuck,
+body.dark #a2-femMalDuck,
+body.dark #b1-malDuck,
+body.dark #c1-ducklings,
+body.dark #c2-duckling,
+body.dark #c2-whiteDuck,
+body.dark #d1-malDuck,
+body.dark #d2-femMalDuck {
+  display: none;
+}
+#nightDucks {
+  filter: drop-shadow(0px 5px 2px rgba(0, 0, 0, 0.2));
+  animation: duck-moving 5s ease-in-out infinite;
+  animation-direction: alternate;
+}
+/* @keyframes duck-moving {
+  0% {
+    transform: translateY(15px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+} */
 /*DAYLIGHT Illustration IDs*/
 /* #a1-whiteDuck,
 #a1-fish,
@@ -430,6 +483,67 @@ small {
   }
   100% {
     transform: rotateZ(360deg) scale(1);
+  }
+}
+#moon {
+  animation: moon-rotate 10s linear infinite;
+  transform-origin: 50% 50%;
+  transform-box: fill-box;
+}
+@keyframes moon-rotate {
+  0% {
+    transform: rotateZ(0deg) scale(1);
+  }
+  25% {
+    transform: rotateZ(90deg) scale(1.1);
+  }
+  50% {
+    transform: rotateZ(180deg) scale(1);
+  }
+  75% {
+    transform: rotateZ(270deg) scale(1.1);
+  }
+  100% {
+    transform: rotateZ(360deg) scale(1);
+  }
+}
+/* NOT WORKING _ STARS */
+/* #nightMontainsSky .cls-136 .cls-43 {
+  /* stars animation */
+/* animation: stars-pulse 10s linear infinite;
+  transform-origin: 50% 50%;
+  transform-box: fill-box;
+}
+@keyframes stars-pulse {
+  0% {
+    transform: rotateZ(0deg) scale(1);
+  }
+  25% {
+    transform: rotateZ(90deg) scale(1.1);
+  }
+  50% {
+    transform: rotateZ(180deg) scale(1);
+  }
+  75% {
+    transform: rotateZ(270deg) scale(1.1);
+  }
+  100% {
+    transform: rotateZ(360deg) scale(1);
+  }
+} */
+#owl-head {
+  animation: owl-moving 2s ease-in-out infinite;
+  animation-direction: alternate;
+  transform-box: fill-box;
+  transform-origin: 50% 80%;
+}
+@keyframes owl-moving {
+  0% {
+    transform: rotateZ(0deg);
+  }
+
+  100% {
+    transform: rotateZ(40deg);
   }
 }
 
@@ -600,9 +714,9 @@ small {
   }
 }
 #c1-koiLeft {
-  animation: koiLeft-moving 7s infinite;
+  animation: koiLeft-moving 12s infinite;
   transform-box: fill-box;
-  transform-origin: 100% 0%;
+  transform-origin: 50% 50%;
 }
 
 @keyframes koiLeft-moving {
