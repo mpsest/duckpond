@@ -58,6 +58,14 @@ for (const button of closeModalButtons) {
   });
 }
 
+const modalBackdrops = document.querySelectorAll(".modal-backdrop");
+for (const backdrop of modalBackdrops) {
+  backdrop.addEventListener("click", function (e) {
+    const modal = backdrop.previousElementSibling;
+    modal.classList.remove("modal-visible");
+  });
+}
+
 const slider = document.querySelector(".sections-container");
 const scrollSpeed = 1.5;
 // Variables to track dragging state
@@ -79,7 +87,7 @@ slider.addEventListener("mousedown", (e) => {
   slider.addEventListener(event, () => {
     isDown = false;
     slider.classList.remove("drag");
-  })
+  }),
 );
 
 // Mouse move event
