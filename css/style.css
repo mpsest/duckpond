@@ -60,7 +60,6 @@ body.dark footer {
 .lang-btn {
   width: 40px;
   cursor: pointer;
-  
 }
 .lang-btn:hover {
   fill: red;
@@ -410,21 +409,25 @@ body.dark #d2-femMalDuck {
     transform: scale(1);
   }
 } */
+body.dark .cls-123 {
+  fill: #333437;
+}
+
 #a1-fish {
   animation: fishLeft-swim 7s ease-in-out infinite;
-  filter: drop-shadow(0px 5px 2px rgba(0, 0, 0, 0.4));
+  filter: drop-shadow(0px 5px 2px rgba(0, 0, 0, 0.1));
   transform-origin: 50% 80%;
 }
 
 @keyframes fishLeft-swim {
   0% {
-    transform: translateX(100px);
+    transform: translateX(0px);
   }
   80% {
-    transform: translateX(30px);
+    transform: translateX(-60px);
   }
-  85% {
-    filter: opacity(0.5);
+  81% {
+    filter: opacity(0);
   }
   100% {
     filter: opacity(0);
@@ -432,21 +435,21 @@ body.dark #d2-femMalDuck {
 }
 #a2-fish,
 #c2-fish {
-  animation: fish-a-c-swim 7s ease-in-out infinite;
-  filter: drop-shadow(0px 5px 2px rgba(0, 0, 0, 0.4));
+  animation: fish-a-c-swim 15s ease-in-out infinite;
+  filter: drop-shadow(0px 5px 2px rgba(0, 0, 0, 0.1));
   transform-origin: 50% 80%;
   animation-direction: forwards;
 }
 
 @keyframes fish-a-c-swim {
   0% {
-    transform: translateX(-75);
+    transform: translateX(0px);
   }
   80% {
     transform: translateX(30px);
   }
-  85% {
-    filter: opacity(0.5);
+  81% {
+    filter: opacity(0);
   }
   100% {
     filter: opacity(0);
@@ -456,7 +459,7 @@ body.dark #d2-femMalDuck {
 #b2-fish,
 #d2-fish {
   animation: fish-b-d-swim 7s ease-in-out infinite;
-  filter: drop-shadow(0px 5px 2px rgba(0, 0, 0, 0.4));
+  filter: drop-shadow(0px 5px 2px rgba(0, 0, 0, 0.1));
   transform-origin: 50% 80%;
   animation-direction: forwards;
 }
@@ -468,8 +471,8 @@ body.dark #d2-femMalDuck {
   80% {
     transform: translateX(30px);
   }
-  85% {
-    filter: opacity(0.5);
+  81% {
+    filter: opacity(0);
   }
   100% {
     filter: opacity(0);
@@ -577,30 +580,32 @@ body.dark #moon {
     transform: rotateZ(360deg) scale(1);
   }
 }
-/* NOT WORKING _ STARS */
-/* #nightMontainsSky .cls-136 .cls-43 {
+#nightMontainsSky > g:first-child .cls-43 {
   /* stars animation */
-/* animation: stars-pulse 10s linear infinite;
+  animation: stars-pulse 5s linear infinite;
+  animation-direction: alternate;
   transform-origin: 50% 50%;
   transform-box: fill-box;
 }
+
 @keyframes stars-pulse {
   0% {
     transform: rotateZ(0deg) scale(1);
   }
   25% {
-    transform: rotateZ(90deg) scale(1.1);
+    transform: rotateZ(90deg) scale(1.2);
   }
   50% {
     transform: rotateZ(180deg) scale(1);
   }
   75% {
-    transform: rotateZ(270deg) scale(1.1);
+    transform: rotateZ(270deg) scale(1.2);
   }
   100% {
     transform: rotateZ(360deg) scale(1);
   }
-} */
+}
+
 #owl-head {
   animation: owl-moving 2s ease-in-out infinite;
   animation-direction: alternate;

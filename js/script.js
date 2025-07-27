@@ -87,7 +87,7 @@ slider.addEventListener("mousedown", (e) => {
   slider.addEventListener(event, () => {
     isDown = false;
     slider.classList.remove("drag");
-  }),
+  })
 );
 
 // Mouse move event
