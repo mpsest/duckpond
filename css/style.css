@@ -111,6 +111,22 @@ small {
   display: none;
 }
 
+.menu .menu-close {
+  display: none;
+  position: fixed;
+  background-color: transparent;
+  bottom: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 1;
+  pointer-events: auto;
+}
+
+.menu .menu-open:checked ~ .menu-close {
+  display: block;
+}
+
 .menu .menu-item {
   position: absolute;
   border-radius: 100%;
@@ -148,6 +164,8 @@ small {
 .menu .menu-items {
   transform: rotateZ(180deg);
   transition: transform ease-out 300ms;
+  position: relative;
+  z-index: 3;
 }
 
 .menu .menu-open:checked ~ .menu-items {
@@ -289,7 +307,7 @@ small {
 
 .section {
   width: 100vw;
-  height: 100vh;
+  height: calc(100vh - 60px);
   scroll-snap-align: center;
   display: flex;
   align-items: center;
