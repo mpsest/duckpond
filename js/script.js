@@ -113,3 +113,10 @@ btnLight.addEventListener("click", function () {
   document.body.classList.add("light");
   document.body.classList.remove("dark");
 });
+
+const menuClose = document.getElementById("menu-close");
+menuClose.addEventListener("click", function () {
+  const menu = document.getElementById("menu-open");
+  console.log(menu);
+  menu.checked = false;
+});
