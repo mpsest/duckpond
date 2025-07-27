@@ -105,7 +105,11 @@ slider.addEventListener("mousemove", (e) => {
 const btnDark = document.getElementById("darkMode");
 btnDark.addEventListener("click", function () {
   document.body.classList.add("dark");
-  const shiftColors = document.querySelectorAll(".lightModeBg");
-  // shiftColors.classList.remove("lightModeBg");
-  // shiftColors.classList.add("darkModeBg");
+  document.body.classList.remove("light");
+});
+
+const btnLight = document.getElementById("lightMode");
+btnLight.addEventListener("click", function () {
+  document.body.classList.add("light");
+  document.body.classList.remove("dark");
 });

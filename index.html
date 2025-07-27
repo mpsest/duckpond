@@ -40,7 +40,7 @@
     <link rel="stylesheet" href="./css/mobile.css" />
     <script src="./js/script.js" defer></script>
   </head>
-  <body class="loading" style="background-color: #c4d1a7">
+  <body class="loading light" style="background-color: #c4d1a7">
     <header>
       <img
         class="logo"
@@ -60,23 +60,35 @@
           <defs>
             <style>
               .sun1 {
-                fill: #231f20;
+                fill: #f0f0f0;
+                stroke: #f0f0f0;
               }
 
               .sun2 {
-                fill: none;
-                stroke: #231f20;
+                fill: #f0f0f0;
+                stroke: #f0f0f0;
                 stroke-miterlimit: 10;
                 stroke-width: 2px;
               }
 
-              <!-- .sun1:hover {
-                stroke: #f0f0f0;
+              body.dark .sun1 {
+                fill: #231f20;
+                stroke: none;
               }
-              .sun2:hover {
+
+              body.dark .sun2 {
+                fill: none;
+                stroke: #231f20;
+              }
+
+              .lightMode-btn:hover .sun1 {
+                fill: #f0f0f0;
+              }
+
+              .lightMode-btn:hover .sun2 {
                 fill: #f0f0f0;
                 stroke: #f0f0f0;
-              } -->
+              }
             </style>
           </defs>
           <circle class="sun2" cx="22.74" cy="22.51" r="7.72" />
@@ -175,10 +187,11 @@
                 stroke-miterlimit: 10;
                 stroke-width: 2px;
               }
-              .moon1:hover {
+              .darkMode-btn:hover .moon1 {
                 fill: #f0f0f0;
               }
-              .moon1:active {
+              .darkMode-btn:active .moon1,
+              body.dark .moon1 {
                 fill: #f0f0f0;
                 stroke: #f0f0f0;
               }

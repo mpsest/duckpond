@@ -50,14 +50,13 @@ body.dark footer {
   height: 80px;
   padding-top: 7px;
 }
+
 .lightMode-btn,
 .darkMode-btn {
   width: 30px;
   cursor: pointer;
 }
-.lightMode-btn:hover {
-  fill: red;
-}
+
 .lang-btn {
   width: 40px;
   cursor: pointer;
@@ -327,7 +326,9 @@ small {
 #nightLandTop,
 #nightPier,
 #nightTreeAnimals {
-  display: none;
+  visibility: hidden;
+  opacity: 0;
+  transition: all ease-out 300ms;
 }
 
 body.dark #nightDucks,
@@ -339,7 +340,8 @@ body.dark #nightLandBottom,
 body.dark #nightLandTop,
 body.dark #nightPier,
 body.dark #nightTreeAnimals {
-  display: block;
+  visibility: visible;
+  opacity: 1;
 }
 
 body.dark #b1-deer,
@@ -359,8 +361,10 @@ body.dark #c2-duckling,
 body.dark #c2-whiteDuck,
 body.dark #d1-malDuck,
 body.dark #d2-femMalDuck {
-  display: none;
+  visibility: hidden;
+  opacity: 0;
 }
+
 #nightDucks {
   filter: drop-shadow(0px 5px 2px rgba(0, 0, 0, 0.2));
   animation: duck-moving 5s ease-in-out infinite;
@@ -540,11 +544,20 @@ body.dark #d2-femMalDuck {
     transform: rotateZ(360deg) scale(1);
   }
 }
+
 #moon {
-  animation: moon-rotate 10s linear infinite;
   transform-origin: 50% 50%;
   transform-box: fill-box;
+  transform: translateX(-100vw);
+  transition: transform 500ms ease-in-out;
 }
+
+body.dark #moon {
+  animation: moon-rotate 10s linear infinite;
+  animation-delay: 500ms;
+  transform: translateX(0);
+}
+
 @keyframes moon-rotate {
   0% {
     transform: rotateZ(0deg) scale(1);
