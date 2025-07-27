@@ -197,10 +197,9 @@ ul.portfolio-slider li {
 
 ul.portfolio-slider li img {
   display: block;
-  background-color: #455e64;
-  width: calc(100% - 50px);
-  min-height: 280px;
   margin: 0px auto;
+  max-width: 100%;
+  object-fit: contain;
 }
 
 ul.portfolio-slider::scroll-button(*) {
