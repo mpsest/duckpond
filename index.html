@@ -630,7 +630,7 @@
                 function (error) {
                   alert("Email not sent. Please try again.", error);
                   console.error("EmailJS error:", error);
-                }
+                },
               );
           });
         // NOT WORKING!!!!!
@@ -698,28 +698,8 @@
                     fill: #fcca38;
                   }
 
-                  #buttons_lilly_pads:hover .btnMenu2 {
-                    fill: #769249;
-                  }
-
-                  #buttons_lilly_pads:hover .btnMenu1 {
-                    fill: #f7eff5;
-                  }
-
-                  #buttons_lilly_pads:hover .btnMenu3 {
-                    fill: #ddbdcf;
-                  }
-
-                  #buttons_lilly_pads:active .btnMenu2 {
-                    fill: #4d652c;
-                  }
-
-                  #buttons_lilly_pads:active .btnMenu1 {
-                    fill: #f3f3f3;
-                  }
-
-                  #buttons_lilly_pads:active .btnMenu3 {
-                    fill: #fcca38;
+                  #buttons_lilly_pads:hover {
+                    filter: brightness(110%);
                   }
                 </style>
               </defs>
