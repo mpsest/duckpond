@@ -293,7 +293,9 @@
               </p>
             </div>
             <div class="align-center">
-              <button id="btn-contactUs" class="lightModeTop"><b>Contact us</b></button>
+              <button id="btn-contactUs" class="lightModeTop">
+                <b>Contact us</b>
+              </button>
               <p><b class="m-top-30">Follow our work on social media</b></p>
               <a href="https://github.com/mpsest" target="_blank">
                 <?xml version="1.0" encoding="utf-8"?>
@@ -454,7 +456,7 @@
               </svg>
             </div>
             <h2 class="align-center">Contacts</h2>
-            <form>
+            <form id="contactForm">
               <h3>Send us a message using the form bellow</h3>
               <label for="contact-message">Your message</label>
               <textarea
@@ -468,6 +470,7 @@
                 <label class="col"
                   >Name*<br />
                   <input
+                    id="name"
                     name="name"
                     class="lightModeTop innershadow"
                     type="text"
@@ -477,6 +480,7 @@
                 <label class="col"
                   >Email*<br />
                   <input
+                    id="email"
                     name="email"
                     class="lightModeTop innerShadow"
                     type="email"
@@ -485,7 +489,7 @@
                 </label>
               </div>
               <input
-                class="col m-top-20 modal-btn lightModeTop dropShadow"
+                class="col m-top-20 send-btn lightModeTop dropShadow"
                 type="submit"
                 value="Send"
               />
@@ -577,6 +581,60 @@
       </div>
     </main>
     <footer>
+      <link
+        rel="stylesheet"
+        type="text/css"
+        href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css"
+      />
+      <script
+        type="text/javascript"
+        src="https://cdn.jsdelivr.net/npm/toastify-js"
+      ></script>
+      <script
+        type="text/javascript"
+        src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"
+      ></script>
+      <script>
+        //criar conta no emailjs
+        //criar um service
+        //criar um template
+
+        (function () {
+          emailjs.init("fbjYw0jamlbXtXPun");
+        })();
+
+        document
+          .getElementById("contactForm")
+          .addEventListener("submit", function (e) {
+            e.preventDefault();
+
+            emailjs
+              .send("service_qzqw6pf", "template_i0rogwk", {
+                name: document.getElementById("name").value,
+                email: document.getElementById("email").value,
+                message: document.getElementById("contact-message").value,
+              })
+              .then(
+                function (response) {
+                  Toastify({
+                    text: "enviado com sucesso",
+
+                    duration: 3000,
+                    style: {
+                      background: "#f0f0f0",
+                      borderRadius: "10px",
+                      color: "#000000",
+                    },
+                  }).showToast();
+                },
+                function (error) {
+                  alert("Email not sent. Please try again.", error);
+                  console.error("EmailJS error:", error);
+                }
+              );
+          });
+        // NOT WORKING!!!!!
+      </script>
       <small
         >Duckpond 2025.<br />
         All rights reserved.
@@ -783,9 +841,24 @@
             </svg>
           </label>
           <div class="menu-items">
-            <a href="#" class="menu-item"> </a>
-            <a href="#" class="menu-item"> </a>
-            <a href="#" class="menu-item"> </a>
+            <a href="#" class="menu-item">
+              <img
+                src="./images/icon-portfolio.svg"
+                alt="icon depicting a briefcase, directing to the 'Portfolio' page."
+              />
+            </a>
+            <a href="#" class="menu-item">
+              <img
+                src="./images/icon-about.svg"
+                alt="icon depicting the letter 'i' for information, directing to the 'About us' page."
+              />
+            </a>
+            <a href="#" class="menu-item">
+              <img
+                src="./images/icon-contacts.svg"
+                alt="icon depicting an envelope, directing to the 'Contacts' page."
+              />
+            </a>
           </div>
           <div class="menu-close" id="menu-close"></div>
         </nav>

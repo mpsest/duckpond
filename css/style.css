@@ -37,14 +37,17 @@ header {
   justify-content: space-between;
   align-items: center;
 }
+
 body.dark header,
 body.dark footer {
   background-color: rgba(48, 66, 70, 0.09);
 }
+
 .header-menu {
   display: flex;
   align-items: center;
 }
+
 .logo {
   width: 80px;
   height: 80px;
@@ -61,9 +64,7 @@ body.dark footer {
   width: 40px;
   cursor: pointer;
 }
-.lang-btn:hover {
-  fill: red;
-}
+
 footer {
   position: fixed;
   bottom: 0;
@@ -77,6 +78,7 @@ footer {
   align-items: center;
   pointer-events: none;
 }
+
 .centering {
   display: flex;
   justify-content: center;
@@ -133,7 +135,7 @@ small {
   overflow: hidden;
   color: #ffffff;
   text-align: center;
-  opacity: 0;
+  opacity: 1;
   top: 50%;
   left: 50%;
   width: 50px;
@@ -144,6 +146,10 @@ small {
   pointer-events: auto;
   cursor: pointer;
 }
+.menu .menu-item svg {
+  z-index: 4;
+}
+/* not working */
 
 .menu .menu-item:nth-child(1) {
   transform: translate3d(-85px, -85px, 0);
@@ -189,6 +195,7 @@ small {
 #b1-button:hover {
   transform: translateY(-25px) scale(1);
 }
+
 #c1-button:hover,
 #d2-button:hover {
   filter: brightness(120%);
@@ -201,15 +208,6 @@ small {
   transform-origin: center center;
   transform-box: fill-box;
 }
-
-/* @keyframes button-hover {
-  0% {
-    transform: translateY(50px) scale(1.5);
-  }
-  100% {
-    transform: translateY(0px) scale(0);
-  }
-} */
 
 .lightModeTop {
   background-color: #f4f3f0;
@@ -335,7 +333,7 @@ small {
   grid-column: 2/ 2;
 }
 
-/* NIGHT Illustration IDs */
+/* Night Illustration */
 #nightDucks,
 #nightLake,
 #nightMontainsSky,
@@ -451,6 +449,7 @@ body.dark .cls-123 {
     filter: opacity(0);
   }
 }
+
 #a2-fish,
 #c2-fish {
   animation: fish-a-c-swim 15s ease-in-out infinite;
@@ -502,6 +501,7 @@ body.dark .cls-123 {
   animation: birds-flying 4s ease-in-out infinite;
   animation-direction: alternate;
 }
+
 @keyframes birds-flying {
   0% {
     transform: translateY(10px);
@@ -510,12 +510,14 @@ body.dark .cls-123 {
     transform: translateY(0);
   }
 }
+
 #birds2,
 #birds4 {
   transform-origin: 50% 80%;
   animation: birds-flying 2.4s ease-in-out infinite;
   animation-direction: alternate;
 }
+
 @keyframes birds-flying {
   0% {
     transform: translateY(-30px);
@@ -524,16 +526,17 @@ body.dark .cls-123 {
     transform: translateY(0);
   }
 }
-/* ARRANJAR ANIMAÇÂO BIRDS */
 
 #buttonLP {
   filter: drop-shadow(0px 5px 2px rgba(0, 0, 0, 0.4));
 }
+
 .cls-132 {
   /* ripples animation */
   animation: ripples 2s ease-in-out infinite;
   animation-direction: alternate;
 }
+
 @keyframes ripples {
   0% {
     transform: translateX(7px);
@@ -646,6 +649,7 @@ body.dark #moon {
   transform-box: fill-box;
   transform-origin: 50% 80%;
 }
+
 @keyframes deer-moving {
   0% {
     transform: rotateZ(0deg) translateY(3px);
@@ -655,8 +659,9 @@ body.dark #moon {
     transform: rotateZ(29deg) translateY(0px);
   }
 }
+
 #doe-head {
-  animation: doe-moving 7s ease-in-out infinite;
+  animation: doe-moving 7s ease-in infinite;
   animation-direction: alternate;
   transform-box: fill-box;
   transform-origin: 50% 80%;
@@ -670,6 +675,7 @@ body.dark #moon {
     transform: rotateZ(35deg) translateY(-2px);
   }
 }
+
 #doe-tail,
 #deer-tail {
   animation: tails-moving 2s ease-in-out infinite;
@@ -677,6 +683,7 @@ body.dark #moon {
   transform-box: fill-box;
   transform-origin: 0 0;
 }
+
 @keyframes tails-moving {
   0% {
     transform: rotate(-5deg);
@@ -708,24 +715,13 @@ body.dark #moon {
     transform: rotate(0deg);
   }
 }
+
 .cls-127,
 .cls-175,
 .cls-105 {
-  /* animation: acorn-moving 5s ease-in-out infinite;
-  animation-direction: alternate;
-  transform-box: fill-box;
-  transform-origin: 50% 50%; */
+  /* acorn */
   display: none;
 }
-
-/* @keyframes acorn-moving {
-  0% {
-    transform: translateX(100deg);
-  }
-  100% {
-    transform: translateX(0deg);
-  }
-} */
 
 #b2-birdDown,
 #b2-birdMiddle,
@@ -740,15 +736,19 @@ body.dark #moon {
 #b2-birdDown {
   animation-delay: 0s;
 }
+
 #b2-birdMiddle {
   animation-delay: 1.2s;
 }
+
 #b2-birdTop {
   animation-delay: 2.8s;
 }
+
 #d1-birdPier {
   animation-delay: 0.7s;
 }
+
 #d1-bird > g > g:first-child {
   animation-delay: 3.5s;
 }
@@ -767,7 +767,8 @@ body.dark #moon {
     transform: translateY(0) rotateZ(0deg);
   }
 }
-/* Ver melhor forma de animar birds */
+
+/* Lake subjects movement animation */
 .cls-11,
 #a1-whiteDuck,
 #a2-whiteDuck,
@@ -783,6 +784,7 @@ body.dark #moon {
   animation: duck-moving 5s ease-in-out infinite;
   animation-direction: alternate;
 }
+
 @keyframes duck-moving {
   0% {
     transform: translateY(15px);
@@ -794,10 +796,11 @@ body.dark #moon {
 
 .cls-101,
 .cls-171 {
-  /* Animation clouds */
+  /*Clouds animation */
   animation: clouds-moving 5s ease-in-out infinite;
   animation-direction: alternate;
 }
+
 @keyframes clouds-moving {
   0% {
     transform: translateY(20px);
@@ -806,6 +809,7 @@ body.dark #moon {
     transform: translateY(0);
   }
 }
+
 #c1-koiLeft {
   animation: koiLeft-moving 12s infinite;
   transform-box: fill-box;
