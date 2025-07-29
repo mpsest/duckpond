@@ -7,6 +7,10 @@ body.dark .lightModeTop {
   background-color: #455e64;
 }
 
+body.modal-open .sections-container {
+  overflow: hidden;
+}
+
 a {
   text-decoration: none;
 }
@@ -245,16 +249,47 @@ ul.portfolio-slider li:hover .portfolio-img-preview {
   box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.3);
 }
 
+.modal-portfolio.modal-zoom > h2,
+.modal-portfolio.modal-zoom .portfolio-container ~ *,
+.modal-portfolio.modal-zoom .portfolio-border,
+.modal-portfolio.modal-zoom .portfolio-img-preview,
+.modal-portfolio.modal-zoom .portfolio-img-label {
+  display: none;
+}
+
 .modal-portfolio .portfolio-img-zoom {
   display: none;
 }
 
-.modal-portfolio.modal-zoom * {
-  display: none;
+.modal-portfolio.modal-zoom {
+  max-width: 100%;
+  max-height: 100%;
+  width: auto;
+  height: auto;
+  cursor: zoom-out;
+  overflow: hidden;
+}
+
+.modal-portfolio.modal-zoom .portfolio-container {
+  max-width: 100%;
+  max-height: 100%;
+  overflow: hidden;
+}
+
+.modal-portfolio.modal-zoom .portfolio-container .portfolio-slider,
+.modal-portfolio.modal-zoom .portfolio-container .portfolio-item {
+  max-height: 100%;
+  overflow-y: hidden;
 }
 
 .modal-portfolio.modal-zoom .portfolio-img-zoom {
   display: block;
+  max-height: calc(100vh - 50px - 60px);
+  max-width: calc(100vw - 50px - 50px);
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  /* margin: 0px auto; */
 }
 
 ul.portfolio-slider::scroll-button(*) {
