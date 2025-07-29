@@ -411,34 +411,60 @@
             <div class="portfolio-container">
               <div class="portfolio-border"></div>
               <ul class="portfolio-slider">
-                <li>
+                <li class="portfolio-item">
                   <img
+                    class="portfolio-img-preview"
                     src="./images/afonso-preview.webp"
-                    alt="Hand drawn black and white ilustration, titled 'Afonso'."
+                    alt="Preview of hand drawn black and white illustration, titled 'Afonso'."
                     width="auto"
                     height="280px"
                   />
-                  <p>“Afonso”, 2023. Hand-drawn illustration.</p>
-                </li>
-                <li>
+                  <p class="portfolio-img-label">
+                    “Afonso”, 2023. Hand-drawn illustration.
+                  </p>
                   <img
+                    width="auto"
+                    height="auto"
+                    class="portfolio-img-zoom"
+                    src="./images/afonso-preview.webp"
+                    alt="Hand drawn black and white illustration, titled 'Afonso'."
+                  />
+                </li>
+                <li class="portfolio-item">
+                  <img
+                    class="portfolio-img-preview"
                     src="./images/irma-preview.webp"
-                    alt="Hand drawn black and white ilustration, titled 'Irma'."
+                    alt="Preview of hand drawn black and white illustration, titled 'Irma'."
                     width="auto"
                     height="280px"
                   />
-                  <p>"Irma", 2022. Hand-drawn illustration.</p>
-                </li>
-                <li>
+                  <p class="portfolio-img-label">
+                    "Irma", 2022. Hand-drawn illustration.
+                  </p>
                   <img
+                    class="portfolio-img-zoom"
+                    src="./images/irma.webp"
+                    alt="Hand drawn black and white illustration, titled 'Irma'."
+                  />
+                </li>
+                <li class="portfolio-item">
+                  <img
+                    class="portfolio-img-preview"
                     src="./images/diogo-preview.webp"
-                    alt="Hand drawn black and white ilustration, titled 'Irma'."
+                    alt="Preview of hand drawn black and white illustration, titled 'Diogo'."
                     width="auto"
                     height="280px"
                   />
-                  <p>"Diogo", 2024. Hand-drawn illustration.</p>
+                  <p class="portfolio-img-label">
+                    "Diogo", 2024. Hand-drawn illustration.
+                  </p>
+                  <img
+                    class="portfolio-img-zoom"
+                    src="./images/diogo.webp"
+                    alt="Hand drawn black and white illustration, titled 'Diogo'."
+                  />
                 </li>
-                <li>
+                <li class="portfolio-item">
                   <img
                     src="./images/manu-preview.webp"
                     alt="Hand drawn black and white ilustration, titled 'Irma'."
@@ -645,7 +671,7 @@
                 function (error) {
                   alert("Email not sent. Please try again.", error);
                   console.error("EmailJS error:", error);
-                }
+                },
               );
           });
         // NOT WORKING!!!!!

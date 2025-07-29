@@ -25,6 +25,19 @@ function portfolioModal() {
   }
 }
 
+const portfolioImages = document.querySelectorAll(".portfolio-slider li img");
+for (const image of portfolioImages) {
+  image.addEventListener("click", function () {
+    const modal = image.closest(".modal");
+    modal.classList.add("modal-zoom");
+    modal.scrollIntoView({
+      behavior: "smooth",
+      block: "center",
+      inline: "center",
+    });
+  });
+}
+
 function aboutModal() {
   const aboutButtons = document.getElementsByClassName("open-modal-about");
   for (const button of aboutButtons) {
@@ -83,6 +96,17 @@ for (const backdrop of modalBackdrops) {
   backdrop.addEventListener("click", function (e) {
     const modal = backdrop.previousElementSibling;
     modal.classList.remove("modal-visible");
+  });
+  backdrop.addEventListener("mousedown", function (e) {
+    e.stopPropagation();
+  });
+}
+
+// prevent drag when modal is visible
+const modals = document.querySelectorAll(".modal");
+for (const modal of modals) {
+  modal.addEventListener("mousedown", function (e) {
+    e.stopPropagation();
   });
 }
 
