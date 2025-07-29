@@ -43,6 +43,11 @@ body.dark footer {
   background-color: rgba(48, 66, 70, 0.09);
 }
 
+button,
+input[type="submit"] {
+  cursor: pointer;
+}
+
 .header-menu {
   display: flex;
   align-items: center;
@@ -132,6 +137,7 @@ small {
 
 .menu .menu-item {
   position: absolute;
+  border: none;
   border-radius: 100%;
   overflow: hidden;
   color: #ffffff;

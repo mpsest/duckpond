@@ -1,39 +1,66 @@
-function portfolioModal() {
-  const portfButton = document.getElementById("c1-button");
-  portfButton.addEventListener("click", function () {
-    const modal = document.getElementById("modal-portfolio");
-    modal.classList.add("modal-visible");
-    modal.scrollIntoView({
-      behavior: "smooth",
-      block: "center",
-      inline: "center",
-    });
-  });
-}
-function aboutModal() {
-  const aboutButton = document.getElementById("b1-button");
-  aboutButton.addEventListener("click", function () {
-    const modal = document.getElementById("modal-about");
-    modal.classList.add("modal-visible");
-    modal.scrollIntoView({
-      behavior: "smooth",
-      block: "center",
-      inline: "center",
-    });
+function openModal(modalId) {
+  const visibleModals = document.getElementsByClassName("modal-visible");
+  for (const modal of visibleModals) {
+    console.log(modal);
+    if (modal.id !== modalId) {
+      modal.classList.remove("modal-visible");
+    }
+  }
+  const modal = document.getElementById(modalId);
+  modal.classList.add("modal-visible");
+  modal.scrollIntoView({
+    behavior: "smooth",
+    block: "center",
+    inline: "center",
   });
 }
 
-function contactsModal() {
-  const contactsButton = document.getElementById("d2-button");
-  contactsButton.addEventListener("click", function () {
-    const modal = document.getElementById("modal-contacts");
-    modal.classList.add("modal-visible");
-    modal.scrollIntoView({
-      behavior: "smooth",
-      block: "center",
-      inline: "center",
+function portfolioModal() {
+  const portfolioButtons = document.getElementsByClassName(
+    "open-modal-portfolio",
+  );
+  for (const button of portfolioButtons) {
+    button.addEventListener("click", function () {
+      openModal("modal-portfolio");
     });
-  });
+  }
+}
+
+function aboutModal() {
+  const aboutButtons = document.getElementsByClassName("open-modal-about");
+  for (const button of aboutButtons) {
+    button.addEventListener("click", function () {
+      openModal("modal-about");
+    });
+  }
+}
+
+function contactsModal() {
+  const contactsButtons = document.getElementsByClassName(
+    "open-modal-contacts",
+  );
+  for (const button of contactsButtons) {
+    button.addEventListener("click", function () {
+      openModal("modal-contacts");
+    });
+  }
+}
+
+function contactsModal() {
+  const contactsButtons = document.getElementsByClassName(
+    "open-modal-contacts",
+  );
+  for (const button of contactsButtons) {
+    button.addEventListener("click", function () {
+      const modal = document.getElementById("modal-contacts");
+      modal.classList.add("modal-visible");
+      modal.scrollIntoView({
+        behavior: "smooth",
+        block: "center",
+        inline: "center",
+      });
+    });
+  }
 }
 
 async function loadDuckpondSvg() {
@@ -54,6 +81,7 @@ const closeModalButtons = document.querySelectorAll(".modal .close");
 for (const button of closeModalButtons) {
   button.addEventListener("click", function () {
     const modal = button.parentElement;
+    console.log(modal);
     modal.classList.remove("modal-visible");
   });
 }
@@ -87,7 +115,7 @@ slider.addEventListener("mousedown", (e) => {
   slider.addEventListener(event, () => {
     isDown = false;
     slider.classList.remove("drag");
-  })
+  }),
 );
 
 // Mouse move event
@@ -117,6 +145,12 @@ btnLight.addEventListener("click", function () {
 const menuClose = document.getElementById("menu-close");
 menuClose.addEventListener("click", function () {
   const menu = document.getElementById("menu-open");
-  console.log(menu);
   menu.checked = false;
 });
+const menuItems = document.getElementsByClassName("menu-item");
+for (const item of menuItems) {
+  item.addEventListener("click", function () {
+    const menu = document.getElementById("menu-open");
+    menu.checked = false;
+  });
+}

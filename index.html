@@ -298,7 +298,10 @@
               </p>
             </div>
             <div class="align-center">
-              <button id="btn-contactUs" class="lightModeTop">
+              <button
+                id="btn-contactUs"
+                class="lightModeTop open-modal-contacts"
+              >
                 <b>Contact us</b>
               </button>
               <p><b class="m-top-30">Follow our work on social media</b></p>
@@ -438,7 +441,9 @@
             </div>
             <div class="align-center">
               <p><b>Drop us a line — we’d love to hear from you.</b></p>
-              <button class="modal-btn lightModeTop dropShadow">
+              <button
+                class="modal-btn lightModeTop dropShadow open-modal-contacts"
+              >
                 <b>Contact us</b>
               </button>
             </div>
@@ -632,7 +637,7 @@
                 function (error) {
                   alert("Email not sent. Please try again.", error);
                   console.error("EmailJS error:", error);
-                }
+                },
               );
           });
         // NOT WORKING!!!!!
@@ -823,30 +828,30 @@
             </svg>
           </label>
           <div class="menu-items">
-            <a href="#" class="menu-item">
+            <button class="menu-item open-modal-portfolio">
               <img
                 src="./images/portfolio.svg"
                 alt="Icon depicting a pair of binoculars, directing to the 'Portfolio' page."
                 width="40px"
                 height="40px"
               />
-            </a>
-            <a href="#" class="menu-item">
+            </button>
+            <button class="menu-item open-modal-about">
               <img
                 src="./images/about.svg"
                 alt="Icon depicting the letter 'i' for information, directing to the 'About us' page."
                 width="35px"
                 height="35px"
               />
-            </a>
-            <a href="#" class="menu-item">
+            </button>
+            <button class="menu-item open-modal-contacts">
               <img
                 src="./images/contacts.svg"
                 alt="Icon depicting an envelope, directing to the 'Contacts' page."
                 width="27px"
                 height="27px"
               />
-            </a>
+            </button>
           </div>
           <div class="menu-close" id="menu-close"></div>
         </nav>

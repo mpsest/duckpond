@@ -36,6 +36,7 @@ a {
   position: relative;
   z-index: 1000;
   justify-content: center;
+  cursor: auto;
 }
 
 .modal-backdrop {
@@ -51,6 +52,7 @@ a {
   visibility: hidden;
   transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
   pointer-events: auto;
+  cursor: auto;
 }
 
 .modal.modal-visible {

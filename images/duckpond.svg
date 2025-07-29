@@ -11820,7 +11820,7 @@
                     />
                   </g>
                 </g>
-                <g id="b1-button">
+                <g id="b1-button" class="open-modal-about">
                   <g>
                     <g>
                       <path
@@ -11935,7 +11935,7 @@
                     </g>
                   </g>
                 </g>
-                <g id="c1-button">
+                <g id="c1-button" class="open-modal-portfolio">
                   <g>
                     <g>
                       <path
@@ -12051,7 +12051,7 @@
                     </g>
                   </g>
                 </g>
-                <g id="d2-button">
+                <g id="d2-button" class="open-modal-contacts">
                   <g>
                     <g>
                       <path
