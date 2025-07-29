@@ -1,7 +1,6 @@
 function openModal(modalId) {
   const visibleModals = document.getElementsByClassName("modal-visible");
   for (const modal of visibleModals) {
-    console.log(modal);
     if (modal.id !== modalId) {
       modal.classList.remove("modal-visible");
     }
@@ -52,13 +51,7 @@ function contactsModal() {
   );
   for (const button of contactsButtons) {
     button.addEventListener("click", function () {
-      const modal = document.getElementById("modal-contacts");
-      modal.classList.add("modal-visible");
-      modal.scrollIntoView({
-        behavior: "smooth",
-        block: "center",
-        inline: "center",
-      });
+      openModal("modal-contacts");
     });
   }
 }
@@ -81,7 +74,6 @@ const closeModalButtons = document.querySelectorAll(".modal .close");
 for (const button of closeModalButtons) {
   button.addEventListener("click", function () {
     const modal = button.parentElement;
-    console.log(modal);
     modal.classList.remove("modal-visible");
   });
 }
