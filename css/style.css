@@ -142,9 +142,12 @@ small {
   height: 50px;
   transition: opacity ease-out 300ms, background-color 100ms;
   display: inline-block;
-  background-color: #f0f0f0;
+  background-color: transparent;
   pointer-events: auto;
   cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .menu .menu-item svg {
   z-index: 4;
@@ -163,10 +166,12 @@ small {
   transform: translate3d(35px, -85px, 0);
 }
 
-.menu .menu-item:hover {
-  background-color: #fefefe;
+.menu .menu-item {
+  background-color: transparent;
 }
-
+.menu .menu-item:hover {
+  background-color: #88a953;
+}
 .menu .menu-items {
   transform: rotateZ(180deg);
   transition: transform ease-out 300ms;
