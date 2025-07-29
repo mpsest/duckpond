@@ -188,7 +188,7 @@
             <style>
               .moon1 {
                 fill: none;
-                stroke: #000;
+                stroke: #f0f0f0;
                 stroke-miterlimit: 10;
                 stroke-width: 2px;
               }
@@ -304,7 +304,7 @@
             <div class="align-center">
               <button
                 id="btn-contactUs"
-                class="lightModeTop open-modal-contacts"
+                class="modal-btn lightModeTop open-modal-contacts"
               >
                 <b>Contact us</b>
               </button>
@@ -439,15 +439,19 @@
                   <p>"Diogo", 2024. Hand-drawn illustration.</p>
                 </li>
                 <li>
-                  <h2>Page 4</h2>
+                  <img
+                    src="./images/manu-preview.webp"
+                    alt="Hand drawn black and white ilustration, titled 'Irma'."
+                    width="auto"
+                    height="280px"
+                  />
+                  <p>"Manu", 2024. Hand-drawn illustration.</p>
                 </li>
               </ul>
             </div>
             <div class="align-center">
               <p><b>Drop us a line — we’d love to hear from you.</b></p>
-              <button
-                class="modal-btn lightModeTop dropShadow open-modal-contacts"
-              >
+              <button class="modal-btn lightModeTop open-modal-contacts">
                 <b>Contact us</b>
               </button>
             </div>
@@ -504,7 +508,7 @@
                 </label>
               </div>
               <input
-                class="col m-top-20 send-btn lightModeTop dropShadow"
+                class="col m-top-20 send-btn modal-btn lightModeTop"
                 type="submit"
                 value="Send"
               />
@@ -641,7 +645,7 @@
                 function (error) {
                   alert("Email not sent. Please try again.", error);
                   console.error("EmailJS error:", error);
-                },
+                }
               );
           });
         // NOT WORKING!!!!!
