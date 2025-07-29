@@ -306,7 +306,8 @@ small {
 
 .section {
   width: 100vw;
-  height: calc(100vh - 60px);
+  margin-top: 60px;
+  height: calc(100vh - 60px - 50px);
   scroll-snap-align: center;
   display: flex;
   align-items: center;
