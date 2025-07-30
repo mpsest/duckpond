@@ -27,11 +27,28 @@ function portfolioModal() {
   }
 }
 
-const portfolioImages = document.querySelectorAll(".portfolio-slider li img");
-for (const image of portfolioImages) {
+const portfolioImagePreview = document.querySelectorAll(
+  ".portfolio-slider li .portfolio-img-preview",
+);
+for (const image of portfolioImagePreview) {
   image.addEventListener("click", function () {
     const modal = image.closest(".modal");
     modal.classList.add("modal-zoom");
+    modal.scrollIntoView({
+      behavior: "smooth",
+      block: "center",
+      inline: "center",
+    });
+  });
+}
+
+const portfolioImageZoom = document.querySelectorAll(
+  ".portfolio-slider li .portfolio-img-zoom",
+);
+for (const image of portfolioImageZoom) {
+  image.addEventListener("click", function () {
+    const modal = image.closest(".modal");
+    modal.classList.remove("modal-zoom");
     modal.scrollIntoView({
       behavior: "smooth",
       block: "center",
@@ -89,7 +106,7 @@ const closeModalButtons = document.querySelectorAll(".modal .close");
 for (const button of closeModalButtons) {
   button.addEventListener("click", function () {
     const modal = button.parentElement;
-    modal.classList.remove("modal-visible");
+    modal.classList.remove("modal-visible", "modal-zoom");
     document.body.classList.remove("modal-open");
   });
 }
@@ -98,7 +115,7 @@ const modalBackdrops = document.querySelectorAll(".modal-backdrop");
 for (const backdrop of modalBackdrops) {
   backdrop.addEventListener("click", function (e) {
     const modal = backdrop.previousElementSibling;
-    modal.classList.remove("modal-visible");
+    modal.classList.remove("modal-visible", "modal-zoom");
     document.body.classList.remove("modal-open");
   });
   backdrop.addEventListener("mousedown", function (e) {

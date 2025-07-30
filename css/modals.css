@@ -268,8 +268,9 @@ ul.portfolio-slider li:hover .portfolio-img-preview {
 }
 
 .modal-portfolio.modal-zoom {
-  max-width: 100%;
-  max-height: 100%;
+  max-width: 90%;
+  max-height: calc(100vh - 120px);
+  margin-top: -60px;
   width: auto;
   height: auto;
   cursor: zoom-out;
@@ -290,12 +291,12 @@ ul.portfolio-slider li:hover .portfolio-img-preview {
 
 .modal-portfolio.modal-zoom .portfolio-img-zoom {
   display: block;
-  max-height: calc(100vh - 50px - 60px);
-  max-width: calc(100vw - 50px - 50px);
-  width: auto;
-  height: auto;
+  max-height: 100%;
+  max-width: 100%;
+  width: 100%;
+  height: 80%;
   object-fit: contain;
-  /* margin: 0px auto; */
+  margin: 20px auto 0px;
 }
 
 ul.portfolio-slider::scroll-button(*) {
