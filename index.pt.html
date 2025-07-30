@@ -194,6 +194,7 @@
               }
               .darkMode-btn:hover .moon1 {
                 fill: #f0f0f0;
+                stroke: #f0f0f0;
               }
               .darkMode-btn:active .moon1,
               body.dark .moon1 {
@@ -216,21 +217,25 @@
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 40 40"
           >
-            <defs>
-              <style>
-                .en1 {
-                  fill: #231f20;
-                }
-              </style>
-            </defs>
             <path
-              class="cls-1"
+              class="enColor"
               d="M17.44,13.07v1.45h-6.3v4.36h5.1v1.39h-5.1v4.48h6.3v1.45h-8.08v-13.12h8.08Z"
             />
             <path
-              class="cls-1"
+              class="enColor"
               d="M21.26,13.13c.08.04.16.12.26.24l7.6,9.89c-.02-.16-.03-.31-.04-.46,0-.15,0-.29,0-.44v-9.29h1.56v13.12h-.9c-.14,0-.26-.02-.35-.07-.09-.05-.19-.13-.28-.25l-7.59-9.88c.01.15.02.3.03.45s0,.28,0,.4v9.35h-1.56v-13.12h.92c.16,0,.28.02.35.06Z"
             />
+            <defs>
+              <style>
+                #english {
+                  fill: #000000;
+                }
+
+                #english:hover .enColor {
+                  fill: #f0f0f0;
+                }
+              </style>
+            </defs>
           </svg>
         </a>
         <a href="index.pt.html">
@@ -244,17 +249,24 @@
           >
             <defs>
               <style>
+                #portuguese {
+                  fill: #f0f0f0;
+                }
                 .pt1 {
-                  fill: #231f20;
+                  fill: #f0f0f0;
+                }
+
+                #portuguese:hover .pt1 {
+                  fill: #f0f0f0;
                 }
               </style>
             </defs>
             <path
-              class="cls-1"
+              class="pt1"
               d="M11.64,21.65v4.89h-1.8v-13.07h3.94c.85,0,1.58.1,2.21.29s1.14.46,1.55.82c.41.35.72.78.92,1.28.2.5.3,1.06.3,1.67s-.11,1.17-.33,1.67c-.22.5-.54.94-.96,1.3-.42.37-.94.65-1.56.85-.62.2-1.33.31-2.14.31h-2.15ZM11.64,20.24h2.15c.52,0,.97-.07,1.37-.2s.73-.32.99-.56c.27-.24.47-.53.61-.86.14-.33.21-.7.21-1.1,0-.83-.26-1.48-.79-1.95-.53-.47-1.32-.7-2.38-.7h-2.15v5.38Z"
             />
             <path
-              class="cls-1"
+              class="pt1"
               d="M30.16,13.46v1.49h-4.32v11.59h-1.81v-11.59h-4.34v-1.49h10.46Z"
             />
           </svg>
@@ -304,7 +316,10 @@
               </p>
             </div>
             <div class="align-center">
-              <button id="btn-contactUs" class="lightModeTop">
+              <button
+                id="btn-contactUs"
+                class="modal-btn lightModeTop open-modal-contacts"
+              >
                 <b>Contacta-nos</b>
               </button>
               <p><b class="m-top-30">Segue-nos nas redes sociais</b></p>
@@ -410,41 +425,80 @@
             <div class="portfolio-container">
               <div class="portfolio-border"></div>
               <ul class="portfolio-slider">
-                <li>
+                <li class="portfolio-item">
                   <img
+                    class="portfolio-img-preview"
                     src="./images/afonso-preview.webp"
-                    alt="Ilustração a preto e branco desenhada à mão, intitulada 'Afonso'."
+                    alt="Pré-visualização de ilustração a preto e branco desenhada à mão, intitulada 'Afonso'."
                     width="auto"
                     height="280px"
                   />
+                  <p class="portfolio-img-label"></p>
                   <p>“Afonso”, 2023. Ilustração desenhada à mão.</p>
-                </li>
-                <li>
                   <img
+                    width="900px"
+                    height="1278px"
+                    class="portfolio-img-zoom"
+                    src="./images/afonso.webp"
+                    alt="Ilustração a preto e branco desenhada à mão, intitulada 'Afonso'."
+                  />
+                </li>
+                <li class="portfolio-item">
+                  <img
+                    class="portfolio-img-preview"
                     src="./images/irma-preview.webp"
-                    alt="Ilustração a preto e branco desenhada à mão, intitulada 'Irma'."
+                    alt="Pré-visualização de ilustração a preto e branco desenhada à mão, intitulada 'Irma'."
                     width="auto"
                     height="280px"
                   />
-                  <p>"Irma", 2022. Ilustração desenhada à mão.</p>
-                </li>
-                <li>
+                  <p class="portfolio-img-label">
+                    "Irma", 2022. Hand-drawn illustration.
+                  </p>
                   <img
+                    class="portfolio-img-zoom"
+                    src="./images/irma.webp"
+                    alt="Ilustração a preto e branco desenhada à mão, intitulada 'Irma'."
+                  />
+                </li>
+                <li class="portfolio-item">
+                  <img
+                    class="portfolio-img-preview"
                     src="./images/diogo-preview.webp"
-                    alt="Ilustração a preto e branco desenhada à mão, intitulada 'Diogo'."
+                    alt="Pré-visualização de ilustração a preto e branco desenhada à mão, intitulada 'Diogo'."
                     width="auto"
                     height="280px"
                   />
-                  <p>"Diogo", 2024. Ilustração desenhada à mão.</p>
+                  <p class="portfolio-img-label">
+                    "Diogo", 2024. Hand-drawn illustration.
+                  </p>
+                  <img
+                    class="portfolio-img-zoom"
+                    src="./images/diogo.webp"
+                    alt="Ilustração a preto e branco desenhada à mão, intitulada 'Diogo'."
+                  />
                 </li>
-                <li>
-                  <h2>Page 4</h2>
+                <li class="portfolio-item">
+                  <img
+                    class="portfolio-img-preview"
+                    src="./images/manu-preview.webp"
+                    alt="Pré-visualização de ilustração a preto e branco desenhada à mão, intitulada 'Manu'."
+                    width="auto"
+                    height="280px"
+                  />
+                  <p class="portfolio-img-label">
+                    "Manu", 2024. Hand-drawn illustration.
+                  </p>
+                  <img
+                    class="portfolio-img-zoom"
+                    src="./images/manu.webp"
+                    alt="Ilustração a preto e branco desenhada à mão, intitulada 'Manu'."
+                  />
                 </li>
               </ul>
             </div>
             <div class="align-center">
               <p><b>Escreve-nos — teremos todo o gosto em ouvir-te.</b></p>
-              <button class="modal-btn lightModeTop dropShadow">
+              <button class="modal-btn lightModeTop open-modal-contacts">
                 <b>Contacta-nos</b>
               </button>
             </div>
@@ -501,7 +555,7 @@
                 </label>
               </div>
               <input
-                class="col m-top-20 send-btn lightModeTop dropShadow"
+                class="col m-top-20 send-btn modal-btn lightModeTop"
                 type="submit"
                 value="Enviar"
               />
@@ -625,8 +679,7 @@
               .then(
                 function (response) {
                   Toastify({
-                    text: "enviado com sucesso",
-
+                    text: "Obrigada pelo teu contacto!",
                     duration: 3000,
                     style: {
                       background: "#f0f0f0",
@@ -636,16 +689,22 @@
                   }).showToast();
                 },
                 function (error) {
-                  alert("Email not sent. Please try again.", error);
-                  console.error("EmailJS error:", error);
-                },
+                  Toastify({
+                    text: "E-mail não enviado. Por favor tenta mais tarde.",
+                    duration: 3000,
+                    style: {
+                      background: "#000000",
+                      borderRadius: "10px",
+                      color: "#f0f0f0",
+                    },
+                  }).showToast();
+                }
               );
           });
-        // NOT WORKING!!!!!
       </script>
       <small>
-        © 2025 Duckpond.<br />
-        All rights reserved.
+        © <span id="currentYear">2025</span> Duckpond.<br />
+        Todos os direitos reservados.
       </small>
       <div class="centering">
         <nav class="menu">
@@ -829,30 +888,30 @@
             </svg>
           </label>
           <div class="menu-items">
-            <a href="#" class="menu-item">
+            <button class="menu-item open-modal-portfolio">
               <img
                 src="./images/portfolio.svg"
-                alt="Icon depicting a pair of binoculars, directing to the 'Portfolio' page."
+                alt="Ícone de binóculos, que direciona para a página 'Portefólio'."
                 width="40px"
                 height="40px"
               />
-            </a>
-            <a href="#" class="menu-item">
+            </button>
+            <button class="menu-item open-modal-about">
               <img
                 src="./images/about.svg"
-                alt="Icon depicting the letter 'i' for information, directing to the 'About us' page."
+                alt="Ícone que representa a letra 'i' de informação, direcionando para a página 'Sobre nós'."
                 width="35px"
                 height="35px"
               />
-            </a>
-            <a href="#" class="menu-item">
+            </button>
+            <button class="menu-item open-modal-contacts">
               <img
                 src="./images/contacts.svg"
-                alt="Icon depicting an envelope, directing to the 'Contacts' page."
+                alt="Ícone que representa um envelope, que direciona para a página 'Contactos'."
                 width="27px"
                 height="27px"
               />
-            </a>
+            </button>
           </div>
           <div class="menu-close" id="menu-close"></div>
         </nav>
