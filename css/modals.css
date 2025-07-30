@@ -78,6 +78,12 @@ body.dark .modal {
 
 .modal h2 {
   margin-top: 0px;
+  margin-bottom: 0px;
+}
+
+.modal p {
+  margin-top: 10px;
+  margin-bottom: 10px;
 }
 
 .modal button {

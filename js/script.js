@@ -18,7 +18,7 @@ function openModal(modalId) {
 
 function portfolioModal() {
   const portfolioButtons = document.getElementsByClassName(
-    "open-modal-portfolio",
+    "open-modal-portfolio"
   );
   for (const button of portfolioButtons) {
     button.addEventListener("click", function () {
@@ -51,7 +51,7 @@ function aboutModal() {
 
 function contactsModal() {
   const contactsButtons = document.getElementsByClassName(
-    "open-modal-contacts",
+    "open-modal-contacts"
   );
   for (const button of contactsButtons) {
     button.addEventListener("click", function () {
@@ -62,7 +62,7 @@ function contactsModal() {
 
 function contactsModal() {
   const contactsButtons = document.getElementsByClassName(
-    "open-modal-contacts",
+    "open-modal-contacts"
   );
   for (const button of contactsButtons) {
     button.addEventListener("click", function () {
@@ -135,7 +135,7 @@ slider.addEventListener("mousedown", (e) => {
   slider.addEventListener(event, () => {
     isDown = false;
     slider.classList.remove("drag");
-  }),
+  })
 );
 
 // Mouse move event
@@ -174,3 +174,6 @@ for (const item of menuItems) {
     menu.checked = false;
   });
 }
+
+let date = new Date().getFullYear();
+document.getElementById("currentYear").textContent = date;

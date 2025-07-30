@@ -277,7 +277,6 @@ small {
 }
 
 .sections-container.drag {
-  /* scroll-snap-type: none; */
   cursor: grabbing;
 }
 
@@ -290,7 +289,7 @@ small {
   z-index: 0;
   overflow: hidden;
   transform-origin: left top;
-  animation: background-zoom 2s ease-out forwards;
+  animation: background-zoom 3s ease-out forwards;
 }
 
 .loading .background-container {
@@ -743,7 +742,6 @@ body.dark #moon {
 }
 
 /* Lake subjects movement animation */
-.cls-11,
 #a1-whiteDuck,
 #a2-whiteDuck,
 #a2-femMalDuck,
