@@ -477,7 +477,14 @@
                     width="auto"
                     height="280px"
                   />
-                  <p>"Manu", 2024. Hand-drawn illustration.</p>
+                  <p class="portfolio-img-label">
+                    "Manu", 2024. Hand-drawn illustration.
+                  </p>
+                  <img
+                    class="portfolio-img-zoom"
+                    src="./images/manu.webp"
+                    alt="Hand drawn black and white illustration, titled 'Manu'."
+                  />
                 </li>
               </ul>
             </div>
@@ -664,8 +671,7 @@
               .then(
                 function (response) {
                   Toastify({
-                    text: "enviado com sucesso",
-
+                    text: "Thanks for contacting us!",
                     duration: 3000,
                     style: {
                       background: "#f0f0f0",
@@ -675,9 +681,16 @@
                   }).showToast();
                 },
                 function (error) {
-                  alert("Email not sent. Please try again.", error);
-                  console.error("EmailJS error:", error);
-                }
+                  Toastify({
+                    text: "Email not sent. Please try again.",
+                    duration: 3000,
+                    style: {
+                      background: "#f0f0f0",
+                      borderRadius: "10px",
+                      color: "#000000",
+                    },
+                  }).showToast();
+                },
               );
           });
         // NOT WORKING!!!!!

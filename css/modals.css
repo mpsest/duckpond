@@ -258,6 +258,7 @@ ul.portfolio-slider li:hover .portfolio-img-preview {
 .modal-portfolio.modal-zoom > h2,
 .modal-portfolio.modal-zoom .portfolio-container ~ *,
 .modal-portfolio.modal-zoom .portfolio-border,
+.modal-portfolio.modal-zoom .portfolio-slider::scroll-marker-group,
 .modal-portfolio.modal-zoom .portfolio-img-preview,
 .modal-portfolio.modal-zoom .portfolio-img-label {
   display: none;
